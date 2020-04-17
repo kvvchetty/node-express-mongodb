@@ -30,9 +30,21 @@ db.mongoose
     process.exit();
   });
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/public'));
+
+// set the home page route
+app.get("/hello", function(req, res) {
+
+    // ejs render automatically looks in the views folder
+    res.render('index');
+});
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to node-express application." });
 });
 
 require("./app/routes/turorial.routes")(app);
