@@ -6,7 +6,7 @@ const app = express();
 
 var corsOptions = {
 //  origin: "http://localhost:8081"
-  origin: "https://nodexmogo-8080.herokuapp.com"
+  origin: "https://agcurdappxk01.herokuapp.com"
 };
 
 app.use(cors(corsOptions));
