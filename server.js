@@ -6,7 +6,12 @@ const app = express();
 
 var corsOptions = {
 //  origin: "http://localhost:8081"
-  origin: "https://agcurdappxk01.herokuapp.com/"
+//  origin: "https://agcurdappxk01.herokuapp.com/"
+  'allowedHeaders': ['sessionId', 'Content-Type'],
+  'exposedHeaders': ['sessionId'],
+  'origin': '*',
+  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  'preflightContinue': false
 };
 
 app.use(cors(corsOptions));
